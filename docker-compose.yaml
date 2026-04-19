@@ -10,6 +10,8 @@ services:
       POSTGRES_DB: social_guardrail_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password123
+      TZ: Asia/Kolkata
+      PGTZ: Asia/Kolkata
 
     ports:
       - "5432:5432"

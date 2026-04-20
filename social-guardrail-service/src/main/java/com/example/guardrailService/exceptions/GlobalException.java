@@ -44,4 +44,11 @@ public class GlobalException {
                 request.getDescription(false).replace("uri=", ""));
         return new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
     }
+    @ExceptionHandler(value = RuntimeException.class)
+    public ResponseEntity<ErrorResponse> handleRuntimeException(RuntimeException ex , WebRequest request){
+        ErrorResponse response = new ErrorResponse(HttpStatus.BAD_REQUEST.value(),
+                ex.getMessage(),
+                request.getDescription(false).replace("uri=", ""));
+        return new ResponseEntity<>(response,HttpStatus.BAD_REQUEST);
+    }
 }

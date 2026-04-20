@@ -11,6 +11,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseAssistantManager">
     <assistants>
+      <assistant-state connection-id="db633f93-bc77-4776-9243-c8295b8e4612" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
+        <tools />
+      </assistant-state>
       <assistant-state connection-id="db633f93-bc77-4776-9243-c8295b8e4612" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="2B8AF85E4CED442BA6BFCFCDCE9D9AE5" availability="AVAILABLE" acknowledgement="ENGAGED" selected="true">
         <chats>
           <chat id="2B8AF85E4CED442BA6BFCFCDCE9D9AE5" title="" session-signature="" timestamp="1776623970975">
@@ -20,7 +23,7 @@
         </chats>
         <tools />
       </assistant-state>
-      <assistant-state connection-id="db633f93-bc77-4776-9243-c8295b8e4612" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
+      <assistant-state connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
         <tools />
       </assistant-state>
       <assistant-state connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="9D5A22E169FF43ADA247DC029BC5EA5F" availability="AVAILABLE" acknowledgement="ENGAGED" selected="true">
@@ -30,9 +33,6 @@
             <context provider="" profile="" model="" action="" interactive="true" />
           </chat>
         </chats>
-        <tools />
-      </assistant-state>
-      <assistant-state connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
         <tools />
       </assistant-state>
     </assistants>
@@ -65,7 +65,12 @@
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" dataset="public.bot" active-filter-id="" />
-    <filter-actions connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" dataset="public.comment" active-filter-id="" />
+    <filter-actions connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" dataset="public.comment" active-filter-id="6bdeed67-bee7-4cae-8933-7fde0ec6c453">
+      <filter id="6bdeed67-bee7-4cae-8933-7fde0ec6c453" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND" />
+    </filter-actions>
+    <filter-actions connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" dataset="public.post" active-filter-id="1aca8a96-79f7-4503-bcb7-f00a93ee0632">
+      <filter id="1aca8a96-79f7-4503-bcb7-f00a93ee0632" name="Filter" temporary="false" custom-name="false" type="basic" join-type="AND" />
+    </filter-actions>
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />

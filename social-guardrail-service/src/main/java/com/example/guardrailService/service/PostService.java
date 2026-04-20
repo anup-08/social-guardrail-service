@@ -5,6 +5,7 @@ import com.example.guardrailService.Dtos.PostRequestDto;
 import com.example.guardrailService.Dtos.PostResponseDto;
 import com.example.guardrailService.entities.Comment;
 import com.example.guardrailService.entities.Post;
+import com.example.guardrailService.exceptions.NotFound;
 import com.example.guardrailService.repository.CommentRepository;
 import com.example.guardrailService.repository.PostRepository;
 import lombok.AllArgsConstructor;
@@ -26,23 +27,23 @@ public class PostService {
 
     public String addCommentToPost(Long postId , CommentRequestDto requestDto) {
         Post post = postRepository.findById(postId)
-                .orElseThrow(() -> new RuntimeException("Post not found with id: " + postId));
+                .orElseThrow(() -> new NotFound("Post not found with id: " + postId));
 
         int depth;
 
         if (requestDto.getParentCommentId() != null) {
             Comment parent = commentRepository.findById(requestDto.getParentCommentId())
-                    .orElseThrow(() -> new RuntimeException("Parent comment not found"));
+                    .orElseThrow(() -> new NotFound("Parent comment not found"));
 
             if(!parent.getPostId().equals(postId)){
-                throw new RuntimeException("Invalid parent comment for this post");
+                throw new IllegalArgumentException("Invalid parent comment for this post");
             }
             depth = parent.getDepthLevel() + 1;
         } else {
             depth = 1;
         }
         if (depth > 20) {
-            throw new RuntimeException("Max depth level exceeded");
+            throw new IllegalArgumentException("Max depth level exceeded");
         }
 
         Comment comment = new Comment();

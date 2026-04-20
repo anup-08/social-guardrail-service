@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -23,10 +24,14 @@ public class Comment {
     @Enumerated(EnumType.STRING)
     private AuthorType authorType;
 
+    private Long parentCommentId;
+
     @Column(columnDefinition = "TEXT")
     private String content;
 
     private int depthLevel;
 
+    @CreationTimestamp
+    @Column(nullable = false , updatable = false)
     private LocalDateTime createdAt;
 }

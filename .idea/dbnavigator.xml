@@ -23,7 +23,13 @@
       <assistant-state connection-id="db633f93-bc77-4776-9243-c8295b8e4612" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
         <tools />
       </assistant-state>
-      <assistant-state connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="" availability="AVAILABLE" acknowledgement="NONE" selected="true">
+      <assistant-state connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" assistant-type="PUBLIC" default-profile-name="" selected-chat-id="9D5A22E169FF43ADA247DC029BC5EA5F" availability="AVAILABLE" acknowledgement="ENGAGED" selected="true">
+        <chats>
+          <chat id="9D5A22E169FF43ADA247DC029BC5EA5F" title="" session-signature="" timestamp="1776626128750">
+            <messages />
+            <context provider="" profile="" model="" action="" interactive="true" />
+          </chat>
+        </chats>
         <tools />
       </assistant-state>
       <assistant-state connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" assistant-type="SELECT_AI" default-profile-name="" selected-chat-id="" availability="UNAVAILABLE" acknowledgement="NONE">
@@ -56,6 +62,10 @@
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="37c8e65e-28b4-470a-bff2-6740b40ca37e" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" dataset="public.bot" active-filter-id="" />
+    <filter-actions connection-id="37c8e65e-28b4-470a-bff2-6740b40ca37e" dataset="public.comment" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
@@ -153,7 +163,9 @@
           </reverse-ssh-tunnel>
         </debugger>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false" hide-audit-columns="false">
-          <object-filters />
+          <object-filters>
+            <filter object-type="TABLE" active="true" />
+          </object-filters>
           <object-type-filter use-master-settings="true">
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
